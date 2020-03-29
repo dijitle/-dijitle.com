@@ -3,15 +3,16 @@ import { func, string } from "prop-types";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import { GlobalStyles } from "./global";
 
 const ToggleContainer = styled.button`
   position: relative;
   display: flex;
   justify-content: space-between;
   background: ${({ theme }) => theme.gradient};
-  width: 8rem;
-  height: 3.5rem;
-  margin: 0 auto;
+  width: 4rem;
+  height: 2rem;
+  margin: 0;
   border-radius: 30px;
   border: 2px solid ${({ theme }) => theme.toggleBorder};
   font-size: 0.5rem;
@@ -19,7 +20,7 @@ const ToggleContainer = styled.button`
   overflow: hidden;
   cursor: pointer;
   svg {
-    width: 2.5rem;
+    width: 1.5rem;
     height: auto;
     transition: all 0.3s linear;
     &:first-child {
@@ -38,8 +39,9 @@ const Toggle = ({ theme, toggleTheme }) => {
 
   return (
     <ToggleContainer lightTheme={isLight} onClick={toggleTheme}>
-      <FontAwesomeIcon icon={faSun} size="4x" color="yellow" />
-      <FontAwesomeIcon icon={faMoon} size="4x" color="gray" />
+      <GlobalStyles />
+      <FontAwesomeIcon icon={faSun} size="2x" color="yellow" />
+      <FontAwesomeIcon icon={faMoon} size="2x" color="gray" />
     </ToggleContainer>
   );
 };
